@@ -25,8 +25,8 @@ contract QuizTest is Test {
         q.answer = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
         q.min_bet = 1 ether;
         q.max_bet = 2 ether;
-        vm.prank(address(1));
-        vm.expectRevert();
+        vm.prank(address(1)); // msg.sender의 값을 1로 설정
+        vm.expectRevert(); // 
         quiz.addQuiz(q);
     }
 
